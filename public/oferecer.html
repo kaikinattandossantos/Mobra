@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobra - Fazer Oferta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Mobra</a>
+      <div class="nav-links">
+        <a href="/">Início</a>
+        <a href="/ofertas.html">Ver Ofertas</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>🚚 Fazer Oferta</h1>
+      <p>Preencha seus dados e envie sua oferta para o cliente</p>
+    </div>
+  </section>
+
+  <section class="section section-white" style="padding-top: 48px;">
+    <div class="container form-container">
+
+      <div class="info-box">
+        💡 <strong>Como funciona</strong> — Preencha seus dados e o valor que cobra pela entrega. O cliente verá sua oferta e poderá entrar em contato diretamente com você.
+      </div>
+
+      <form id="form-oferta">
+        <div class="campo">
+          <label for="freteiro_nome">Seu nome *</label>
+          <input type="text" id="freteiro_nome" placeholder="Ex: João Silva" required />
+        </div>
+        <div class="campo">
+          <label for="freteiro_telefone">Seu WhatsApp *</label>
+          <input type="tel" id="freteiro_telefone" placeholder="Ex: 81999999999" required />
+          <small>O cliente vai te contatar por aqui</small>
+        </div>
+        <div class="campo">
+          <label for="veiculo">Seu veículo *</label>
+          <select id="veiculo" required>
+            <option value="">Selecione...</option>
+            <option value="Moto">Moto</option>
+            <option value="Carro">Carro</option>
+            <option value="Pickup">Pickup</option>
+            <option value="VUC">VUC</option>
+            <option value="Van">Van</option>
+            <option value="Caminhão Pequeno">Caminhão Pequeno</option>
+            <option value="Caminhão Grande">Caminhão Grande</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="pedido_origem">Origem do pedido *</label>
+          <input type="text" id="pedido_origem" placeholder="Ex: Recife, PE" required />
+          <small>Onde vai buscar a carga</small>
+        </div>
+        <div class="campo">
+          <label for="pedido_destino">Destino do pedido *</label>
+          <input type="text" id="pedido_destino" placeholder="Ex: Olinda, PE" required />
+          <small>Onde vai entregar a carga</small>
+        </div>
+        <div class="campo">
+          <label for="valor">Seu valor em R$ *</label>
+          <input type="number" id="valor" placeholder="Ex: 150.00" step="0.01" min="0" required />
+        </div>
+        <div class="campo">
+          <label for="descricao">Observações (opcional)</label>
+          <textarea id="descricao" rows="3" placeholder="Ex: Disponível a partir das 14h, aceito carga frágil..."></textarea>
+        </div>
+
+        <div class="aviso-box">
+          ⚠️ Campos marcados com <strong>*</strong> são obrigatórios.
+        </div>
+
+        <button type="submit" id="btn-enviar">🚀 Enviar Oferta</button>
+      </form>
+
+      <div id="mensagem" class="mensagem oculto"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Mobra · Logística e Entregas · Recife, PE</p>
+    </div>
+  </footer>
+
+  <script src="oferecer.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobra - Ofertas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Mobra</a>
+      <div class="nav-links">
+        <a href="/">Início</a>
+        <a href="/pedido.html">Fazer Pedido</a>
+        <a href="/ofertas.html" class="btn-nav">Ver Ofertas</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>🚚 Ofertas de Freteiros</h1>
+      <p>Freteiros disponíveis prontos para atender seu pedido</p>
+    </div>
+  </section>
+
+  <section class="section section-white" style="padding-top: 48px;">
+    <div class="container">
+      <div id="loading" class="loading-box">Carregando ofertas...</div>
+      <div id="sem-ofertas" class="sem-ofertas oculto">Nenhuma oferta disponível no momento.</div>
+      <div id="lista-ofertas" class="ofertas-grid oculto"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Mobra · Logística e Entregas · Recife, PE</p>
+    </div>
+  </footer>
+
+  <script src="ofertas.js"></script>
+</body>
+</html>
