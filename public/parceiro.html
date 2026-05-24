@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobra - Área do Parceiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Mobra</a>
+      <div class="nav-links">
+        <a href="/">Início</a>
+        <a href="/ofertas.html">Ver Ofertas</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>🤝 Área do Parceiro</h1>
+      <p>Cadastre-se ou entre para acessar os pedidos disponíveis</p>
+    </div>
+  </section>
+
+  <section class="section section-white" style="padding-top: 48px;">
+    <div class="container form-container">
+
+      <!-- TABS -->
+      <div class="tabs">
+        <button class="tab ativo" id="tab-entrar" onclick="trocarTab('entrar')">Entrar</button>
+        <button class="tab" id="tab-cadastro" onclick="trocarTab('cadastro')">Criar conta</button>
+      </div>
+
+      <!-- LOGIN -->
+      <form id="form-entrar">
+        <div class="campo">
+          <label for="login-email">E-mail *</label>
+          <input type="email" id="login-email" placeholder="seu@email.com" required />
+        </div>
+        <div class="campo">
+          <label for="login-senha">Senha *</label>
+          <input type="password" id="login-senha" placeholder="••••••••" required />
+        </div>
+        <button type="submit" id="btn-entrar">Entrar</button>
+        <div id="msg-entrar" class="mensagem oculto"></div>
+      </form>
+
+      <!-- CADASTRO -->
+      <form id="form-cadastro" class="oculto">
+        <div class="campo">
+          <label for="cad-nome">Seu nome *</label>
+          <input type="text" id="cad-nome" placeholder="Ex: João Silva" required />
+        </div>
+        <div class="campo">
+          <label for="cad-telefone">WhatsApp *</label>
+          <input type="tel" id="cad-telefone" placeholder="Ex: 81999999999" required />
+        </div>
+        <div class="campo">
+          <label for="cad-veiculo">Veículo *</label>
+          <select id="cad-veiculo" required>
+            <option value="">Selecione...</option>
+            <option value="Moto">Moto</option>
+            <option value="Carro">Carro</option>
+            <option value="Pickup">Pickup</option>
+            <option value="VUC">VUC</option>
+            <option value="Van">Van</option>
+            <option value="Caminhão Pequeno">Caminhão Pequeno</option>
+            <option value="Caminhão Grande">Caminhão Grande</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="cad-email">E-mail *</label>
+          <input type="email" id="cad-email" placeholder="seu@email.com" required />
+        </div>
+        <div class="campo">
+          <label for="cad-senha">Senha *</label>
+          <input type="password" id="cad-senha" placeholder="Mínimo 6 caracteres" required />
+        </div>
+        <button type="submit" id="btn-cadastro">Criar conta</button>
+        <div id="msg-cadastro" class="mensagem oculto"></div>
+      </form>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Mobra · Logística e Entregas · Recife, PE</p>
+    </div>
+  </footer>
+
+  <script src="parceiro.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobra - Painel do Parceiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Mobra</a>
+      <div class="nav-links">
+        <span id="nav-nome" style="color: var(--muted); font-size: 0.9rem;"></span>
+        <a href="#" onclick="sair()" class="btn-nav" style="background: #ef4444;">Sair</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1 id="painel-titulo">👋 Bem-vindo ao Painel</h1>
+      <p>Gerencie suas ofertas e veja os pedidos disponíveis</p>
+    </div>
+  </section>
+
+  <section class="section section-white" style="padding-top: 48px; padding-bottom: 60px;">
+    <div class="container">
+
+      <!-- TABS PAINEL -->
+      <div class="tabs" style="max-width: 600px; margin: 0 auto 32px;">
+        <button class="tab ativo" onclick="trocarPainel('pedidos')">📋 Pedidos Disponíveis</button>
+        <button class="tab" onclick="trocarPainel('minhas')">🚚 Minhas Ofertas</button>
+      </div>
+
+      <!-- PEDIDOS DISPONÍVEIS -->
+      <div id="painel-pedidos">
+        <div id="loading-pedidos" class="loading-box">Carregando pedidos...</div>
+        <div id="lista-pedidos" class="ofertas-grid oculto" style="max-width: 800px; margin: 0 auto;"></div>
+        <div id="sem-pedidos" class="sem-ofertas oculto">Nenhum pedido disponível no momento.</div>
+      </div>
+
+      <!-- MINHAS OFERTAS -->
+      <div id="painel-minhas" class="oculto">
+        <div id="loading-minhas" class="loading-box">Carregando suas ofertas...</div>
+        <div id="lista-minhas" class="ofertas-grid oculto" style="max-width: 800px; margin: 0 auto;"></div>
+        <div id="sem-minhas" class="sem-ofertas oculto">Você ainda não fez nenhuma oferta.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Mobra · Logística e Entregas · Recife, PE</p>
+    </div>
+  </footer>
+
+  <script src="painel.js"></script>
+</body>
+</html>

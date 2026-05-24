@@ -175,3 +175,10 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; }
   outline: none; background: white; cursor: pointer;
 }
 .campo select:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+
+
+/* TABS */
+.tabs { display: flex; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; margin-bottom: 28px; }
+.tab { flex: 1; padding: 12px; border: none; background: white; font-family: 'Inter', sans-serif;
+  font-size: 0.9rem; font-weight: 600; cursor: pointer; color: var(--muted); transition: all 0.2s; }
+.tab.ativo { background: var(--blue); color: white; }

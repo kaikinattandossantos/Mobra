@@ -106,6 +106,57 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
+
+// Buscar pedidos para o painel do parceiro
+app.get("/api/pedidos", async (req, res) => {
+  const { data, error } = await supabase
+    .from("pedidos")
+    .select("*")
+    .order("criado_em", { ascending: false });
+
+  if (error) {
+    return res.status(500).json({ erro: "Erro ao buscar pedidos" });
+  }
+
+  res.json({ pedidos: data });
+});
+
+// Cadastro de parceiro
+app.post("/api/auth/cadastro", async (req, res) => {
+  const { email, senha, nome, telefone, veiculo } = req.body;
+
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password: senha,
+    options: {
+      data: { nome, telefone, veiculo }
+    }
+  });
+
+  if (error) {
+    return res.status(400).json({ erro: error.message });
+  }
+
+  res.json({ sucesso: true, user: data.user, session: data.session });
+});
+
+// Login de parceiro
+app.post("/api/auth/login", async (req, res) => {
+  const { email, senha } = req.body;
+
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password: senha,
+  });
+
+  if (error) {
+    return res.status(400).json({ erro: error.message });
+  }
+
+  res.json({ sucesso: true, user: data.user, session: data.session });
+});
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Mobra rodando em http://localhost:${PORT}`);
